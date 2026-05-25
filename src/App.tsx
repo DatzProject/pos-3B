@@ -14,7 +14,7 @@ const COLORS = {
 
 const ACCESS_CODE = "12161564449135502205440";
 
-function AccessPage({ onUnlock }) {
+function AccessPage({ onUnlock }: { onUnlock: () => void }) {
   const [input, setInput] = useState("");
   const [shake, setShake] = useState(false);
   const [wrong, setWrong] = useState(false);
@@ -29,7 +29,7 @@ function AccessPage({ onUnlock }) {
     }
   };
 
-  const handleKey = (e) => {
+  const handleKey = (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") handleSubmit();
   };
 
